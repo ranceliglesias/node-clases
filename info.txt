@@ -1,0 +1,5 @@
+Para hacer Debugin ...
+DEBUG=express node index.js
+
+Vigilar el proceso Node al hacer cambios en el proyecto
+npm i nodemon
