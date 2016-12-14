@@ -18,15 +18,17 @@ app.set('views', path.join(__dirname, 'views'));
 // Route 1
 app.get('/:city', (req, res) =>{
   rp({
-    uri: 'http://dataservice.accuweather.com/locations/v1/search',
+    uri: 'http://apidev.accuweather.com/locations/v1/search',
     qs: {
       q: req.params.city,
-      apikey: '9nGifqlQ5goAFBTonPiAtTY3FhFxHGKy'
+      apikey: 'hoArfRosT1215'
     },
     json: true
   })
   .then((data) => {
-    res.render('home', data)
+    res.render('home', {
+      data: JSON.stringify(data[0])
+    });
   })
   .catch((err) => {
     console.warn(err);
